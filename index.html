@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game entahlah</title>
+    <link rel="shortcut icon" href="https://img.icons8.com/external-flaticons-flat-flat-icons/2x/external-game-live-streaming-flaticons-flat-flat-icons.png" type="image/x-icon">
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+        body {
+            background: rgb(131, 221, 131);
+        }
+        .coin-count {
+            width: 321px;
+            border-bottom: 1px dashed black;
+        }
+
+        .board {
+            margin-top: 10px;
+            height: max-content;
+            width: max-content;
+            border: 1px dashed black;
+        }
+        .row {
+            display: flex;
+        }
+        .col {
+            margin: 1px 1px;
+            height: 30px;
+            width: 30px;
+        }
+
+        .player {
+            background: black;
+            border-radius: 20%;
+            height: 30px;
+            width: 30px;
+        }
+
+        @keyframes kedip {
+            0% {
+                opacity: 100%;
+            }
+            10% {
+                opacity: 30%;
+            }
+            20% {
+                opacity: 100%;
+            }
+            30% {
+                opacity: 30%;
+            }
+            40% {
+                opacity: 100%;
+            }
+            50% {
+                opacity: 30%;
+            }
+            60% {
+                opacity: 100%;
+            }
+            70% {
+                opacity: 30%;
+            }
+            80% {
+                opacity: 100%;
+            }
+            90% {
+                opacity: 30%;
+            }
+            100% {
+                opacity: 100%;
+            }
+        }
+
+        .coin {
+            background: yellow;
+            border-radius: 50%;
+            height: 20px;
+            width: 20px;
+        }
+
+        .btn-controler {
+            background: rgb(221, 221, 221);
+            border: 1px solid black;
+            border-radius: 10%;
+            box-shadow: 2px 3px 4px rgb(134, 134, 134);
+            height: 50px;
+            width: 50px;
+            transition: 50ms;
+        }
+        .btn-controler:active {
+            transform: scale(1.09);
+        }
+
+    </style>
+</head>
+<body>
+    <center>
+        <div class="coin-count">0</div>
+        <div class="board">
+            <div class="row-1 row">
+                <div class="col-1-1 col"></div>
+                <div class="col-1-2 col"></div>
+                <div class="col-1-3 col"></div>
+                <div class="col-1-4 col"></div>
+                <div class="col-1-5 col"></div>
+                <div class="col-1-6 col"></div>
+                <div class="col-1-7 col"></div>
+                <div class="col-1-8 col"></div>
+                <div class="col-1-9 col"></div>
+                <div class="col-1-10 col"></div>
+            </div>
+            <div class="row-2 row">
+                <div class="col-2-1 col"></div>
+                <div class="col-2-2 col"></div>
+                <div class="col-2-3 col"></div>
+                <div class="col-2-4 col"></div>
+                <div class="col-2-5 col"></div>
+                <div class="col-2-6 col"></div>
+                <div class="col-2-7 col"></div>
+                <div class="col-2-8 col"></div>
+                <div class="col-2-9 col"></div>
+                <div class="col-2-10 col"></div>
+            </div>
+            <div class="row-3 row">
+                <div class="col-3-1 col"></div>
+                <div class="col-3-2 col"></div>
+                <div class="col-3-3 col"></div>
+                <div class="col-3-4 col"></div>
+                <div class="col-3-5 col"></div>
+                <div class="col-3-6 col"></div>
+                <div class="col-3-7 col"></div>
+                <div class="col-3-8 col"></div>
+                <div class="col-3-9 col"></div>
+                <div class="col-3-10 col"></div>
+            </div>
+            <div class="row-4 row">
+                <div class="col-4-1 col"></div>
+                <div class="col-4-2 col"></div>
+                <div class="col-4-3 col"></div>
+                <div class="col-4-4 col"></div>
+                <div class="col-4-5 col"></div>
+                <div class="col-4-6 col"></div>
+                <div class="col-4-7 col"></div>
+                <div class="col-4-8 col"></div>
+                <div class="col-4-9 col"></div>
+                <div class="col-4-10 col"></div>
+            </div>
+            <div class="row-5 row">
+                <div class="col-5-1 col"></div>
+                <div class="col-5-2 col"></div>
+                <div class="col-5-3 col"></div>
+                <div class="col-5-4 col"></div>
+                <div class="col-5-5 col"><div class="player"></div></div>
+                <div class="col-5-6 col"></div>
+                <div class="col-5-7 col"></div>
+                <div class="col-5-8 col"></div>
+                <div class="col-5-9 col"></div>
+                <div class="col-5-10 col"></div>
+            </div>
+            <div class="row-6 row">
+                <div class="col-6-1 col"></div>
+                <div class="col-6-2 col"></div>
+                <div class="col-6-3 col"></div>
+                <div class="col-6-4 col"></div>
+                <div class="col-6-5 col"></div>
+                <div class="col-6-6 col"></div>
+                <div class="col-6-7 col"></div>
+                <div class="col-6-8 col"></div>
+                <div class="col-6-9 col"></div>
+                <div class="col-6-10 col"></div>
+            </div>
+            <div class="row-7 row">
+                <div class="col-7-1 col"></div>
+                <div class="col-7-2 col"></div>
+                <div class="col-7-3 col"></div>
+                <div class="col-7-4 col"></div>
+                <div class="col-7-5 col"></div>
+                <div class="col-7-6 col"></div>
+                <div class="col-7-7 col"></div>
+                <div class="col-7-8 col"></div>
+                <div class="col-7-9 col"></div>
+                <div class="col-7-10 col"></div>
+            </div>
+            <div class="row-8 row">
+                <div class="col-8-1 col"></div>
+                <div class="col-8-2 col"></div>
+                <div class="col-8-3 col"></div>
+                <div class="col-8-4 col"></div>
+                <div class="col-8-5 col"></div>
+                <div class="col-8-6 col"></div>
+                <div class="col-8-7 col"></div>
+                <div class="col-8-8 col"></div>
+                <div class="col-8-9 col"></div>
+                <div class="col-8-10 col"></div>
+            </div>
+            <div class="row-9 row">
+                <div class="col-9-1 col"></div>
+                <div class="col-9-2 col"></div>
+                <div class="col-9-3 col"></div>
+                <div class="col-9-4 col"></div>
+                <div class="col-9-5 col"></div>
+                <div class="col-9-6 col"></div>
+                <div class="col-9-7 col"></div>
+                <div class="col-9-8 col"></div>
+                <div class="col-9-9 col"></div>
+                <div class="col-9-10 col"></div>
+            </div>
+            <div class="row-10 row">
+                <div class="col-10-1 col"></div>
+                <div class="col-10-2 col"></div>
+                <div class="col-10-3 col"></div>
+                <div class="col-10-4 col"></div>
+                <div class="col-10-5 col"></div>
+                <div class="col-10-6 col"></div>
+                <div class="col-10-7 col"></div>
+                <div class="col-10-8 col"></div>
+                <div class="col-10-9 col"></div>
+                <div class="col-10-10 col"></div>
+            </div>
+        </div>
+
+        <div class="controler">
+            <div>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button class="btn btn-controler" id="atas" data-arah-index="vertikal,-"><b>W</b></button></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><button class="btn btn-controler" id="kiri" data-arah-index="horizontal,-"><b>A</b></button></td>
+                        <td></td>
+                        <td><button class="btn btn-controler" id="kanan" data-arah-index="horizontal,+"><b>D</b></button></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button class="btn btn-controler" id="bawah" data-arah-index="vertikal,+"><b>S</b></button></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <p style="margin-top: 20px;">oleh : <a target="_blank" href="https://aryadewata.github.io/Profil" style="color: blue;">saya</a></p>
+    </center>
+
+    <script>
+        document.querySelector('.player').style.animationName = 'kedip';
+        document.querySelector('.player').style.animationDuration = '500ms';
+
+        let coin = 0;
+
+        const btnAtas = document.querySelector('#atas');
+        const btnKiri = document.querySelector('#kiri');
+        const btnKanan = document.querySelector('#kanan');
+        const btnBawah = document.querySelector('#bawah');
+        document.addEventListener('keydown', (event) => {
+            var keyValue = event.key;
+            if(keyValue == 'w' || keyValue == 'W'){
+                btnAtas.click();
+            }else if(keyValue == 'a' || keyValue == 'A'){
+                btnKiri.click();
+            }else if(keyValue == 's' || keyValue == 'S'){
+                btnBawah.click();
+            }else if(keyValue == 'd' || keyValue == 'D'){
+                btnKanan.click();
+            }
+        }, false);
+
+
+        function respawnCoin(){
+            let vertikalPos = parseInt(Math.random() * 10);
+            let horizontalPos = parseInt(Math.random() * 10);
+            if(!document.querySelector(`.col-${vertikalPos < 1 ? 1 : vertikalPos}-${horizontalPos < 1 ? 1 : horizontalPos}`).innerHTML){
+                document.querySelector(`.col-${vertikalPos < 1 ? 1 : vertikalPos}-${horizontalPos < 1 ? 1 : horizontalPos}`).innerHTML = '<div class="coin"></div>'
+            }else {
+                respawnCoin();
+            }
+        }
+        let gerak;
+        document.querySelectorAll('.btn-controler').forEach(btn => {
+            btn.addEventListener('click', function(){
+                clearInterval(gerak);
+                gerak = setInterval(() => {
+                    let tipeMove = this.dataset.arahIndex.split(',')[0];
+                    let movePos = this.dataset.arahIndex.split(',')[1];
+                    let vertikalCurrentPos = Number(document.querySelector('.player').parentNode.classList[0].split('-')[1]);
+                    let horizontalCurrentPos = Number(document.querySelector('.player').parentNode.classList[0].split('-')[2]);
+                    if(tipeMove == 'vertikal'){
+                        if(movePos == '+'){
+                            vertikalCurrentPos = vertikalCurrentPos + 1 > 10 ? 1 : vertikalCurrentPos + 1;
+                        }else {
+                            vertikalCurrentPos = vertikalCurrentPos - 1 == 0 ? 10 : vertikalCurrentPos - 1;
+                        }
+                    }else if(tipeMove == 'horizontal'){
+                        if(movePos == '+'){
+                            horizontalCurrentPos = horizontalCurrentPos + 1 > 10 ? 1 : horizontalCurrentPos + 1;
+                        }else {
+                            horizontalCurrentPos = horizontalCurrentPos - 1 == 0 ? 10 : horizontalCurrentPos - 1;
+                        }
+                    }
+                    document.querySelector('.player').remove();
+                    if(document.querySelector(`.col-${vertikalCurrentPos}-${horizontalCurrentPos}`).childNodes[0]){
+                        coin++;
+                        document.querySelector('.coin-count').innerHTML = coin;
+                        respawnCoin();
+                        if(coin == 100){
+                            alert('Tamat!')
+                        }
+                    }
+                    document.querySelector(`.col-${vertikalCurrentPos}-${horizontalCurrentPos}`).innerHTML = `<div class="player"></div>`;
+                }, 150);
+            })
+        })
+        respawnCoin();
+    </script>
+</body>
+</html>

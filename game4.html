@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game 4</title>
+    <link rel="shortcut icon" href="https://img.icons8.com/external-flaticons-flat-flat-icons/2x/external-game-live-streaming-flaticons-flat-flat-icons.png" type="image/x-icon">
+    <style>
+        * {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .coin-count {
+            width: 361px;
+            border-bottom: 1px dashed black;
+        }
+
+        .board {
+            background: rgb(208, 255, 208);
+            margin-top: 10px;
+            height: max-content;
+            width: max-content;
+            border: 1px dashed black;
+        }
+        .row {
+            display: flex;
+        }
+        .col {
+            margin: 1px 1px;
+            height: 10px;
+            width: 10px;
+        }
+
+        .player, .player-body {
+            background: black;
+            border-radius: 20%;
+            height: 10px;
+            width: 10px;
+        }
+        .peluru {
+            background: rgb(0, 0, 0);
+            border-radius: 50%;
+            height: 5px;
+            width: 5px;
+        }
+
+        @keyframes kedip {
+            0% {
+                opacity: 100%;
+            }
+            10% {
+                opacity: 30%;
+            }
+            20% {
+                opacity: 100%;
+            }
+            30% {
+                opacity: 30%;
+            }
+            40% {
+                opacity: 100%;
+            }
+            50% {
+                opacity: 30%;
+            }
+            60% {
+                opacity: 100%;
+            }
+            70% {
+                opacity: 30%;
+            }
+            80% {
+                opacity: 100%;
+            }
+            90% {
+                opacity: 30%;
+            }
+            100% {
+                opacity: 100%;
+            }
+        }
+
+        .coin {
+            background: red;
+            border-radius: 50%;
+            height: 10px;
+            width: 10px;
+        }
+
+        .btn-controler {
+            background: rgb(221, 221, 221);
+            border: 1px solid black;
+            border-radius: 10%;
+            box-shadow: 2px 3px 4px rgb(134, 134, 134);
+            height: 50px;
+            width: 50px;
+            transition: 50ms;
+        }
+        .btn-controler:active {
+            transform: scale(1.09);
+        }
+
+    </style>
+</head>
+<body>
+    <a href="index.html"><button>back(Esc)</button></a>
+    <center>
+        <div class="coin-count">0</div>
+        <div class="board">
+
+        </div>
+
+        <div class="controler">
+            <div>
+                <table>
+                    <tr>
+                        <td></td>
+                        <td><button class="btn btn-controler" onclick="tembak()"><b>F</b></button></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><button class="btn btn-controler-move btn-controler" id="kiri" data-arah-index="-"><b>A</b></button></td>
+                        <td></td>
+                        <td><button class="btn btn-controler-move btn-controler" id="kanan" data-arah-index="+"><b>D</b></button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </center>
+
+    <script>function _0xccda(_0x3adf94,_0xc4724c){const _0x464746=_0x4647();return _0xccda=function(_0xccdaa2,_0x54b044){_0xccdaa2=_0xccdaa2-0x198;let _0x37c888=_0x464746[_0xccdaa2];return _0x37c888;},_0xccda(_0x3adf94,_0xc4724c);}function _0x4647(){const _0x1a50bf=['classList','dataset','</div>','.col-','\x20row\x22>','index.html','\x22></div>','split','2161672lEXnYQ','<div\x20class=\x22player-body\x22></div>','innerHTML','3LrfKIE','#kiri','\x20col\x22><div\x20class=\x22player-body\x22></div></div>','<div\x20class=\x22player\x22></div>','.btn-controler-move','<div\x20class=\x22col-','href','.board','6868784iNRKrv','querySelectorAll','click','\x20col\x22></div>','keydown','.player','\x20col\x22><div\x20class=\x22player\x22></div></div>','1236030XYyRPv','1566599XNNmYy','addEventListener','Escape','15XTErpV','parentNode','<div\x20class=\x22row-','location','2646290ZWecZu','53437824ClXarW','.player-body','remove','querySelector','forEach','5350499IcWeDl'];_0x4647=function(){return _0x1a50bf;};return _0x4647();}const _0x3d1a29=_0xccda;(function(_0x45069c,_0x4201a7){const _0x4b0e35=_0xccda,_0x56271c=_0x45069c();while(!![]){try{const _0x503cb4=-parseInt(_0x4b0e35(0x1a6))/0x1+-parseInt(_0x4b0e35(0x1ad))/0x2*(parseInt(_0x4b0e35(0x1bf))/0x3)+-parseInt(_0x4b0e35(0x19e))/0x4+parseInt(_0x4b0e35(0x1a9))/0x5*(parseInt(_0x4b0e35(0x1a5))/0x6)+-parseInt(_0x4b0e35(0x1b3))/0x7+-parseInt(_0x4b0e35(0x1bc))/0x8+parseInt(_0x4b0e35(0x1ae))/0x9;if(_0x503cb4===_0x4201a7)break;else _0x56271c['push'](_0x56271c['shift']());}catch(_0x3d106d){_0x56271c['push'](_0x56271c['shift']());}}}(_0x4647,0xdf27d));let poin=0x0,indexPeluru=0x1;function tembak(){const _0x3e878b=_0xccda;let _0x56f102=indexPeluru,_0x3c33ba=0x1d,_0x3aaec4=Number(document[_0x3e878b(0x1b1)](_0x3e878b(0x1a3))[_0x3e878b(0x1aa)][_0x3e878b(0x1b4)][0x0][_0x3e878b(0x1bb)]('-')[0x2]),_0x4c97ee=setInterval(()=>{const _0x45843c=_0x3e878b;document[_0x45843c(0x1b1)]('.peluru-'+_0x56f102)?document[_0x45843c(0x1b1)]('.peluru-'+_0x56f102)[_0x45843c(0x1b0)]():0x0;if(_0x3c33ba>0x1)_0x3c33ba--,document[_0x45843c(0x1b1)](_0x45843c(0x1b7)+_0x3c33ba+'-'+_0x3aaec4)[_0x45843c(0x1be)]='<div\x20class=\x22peluru\x20peluru-'+_0x56f102+_0x45843c(0x1ba);else clearInterval(_0x4c97ee);},0x28);indexPeluru++;}let board='';for(let i=0x1;i<=0x1e;i++){board+=_0x3d1a29(0x1ab)+i+_0x3d1a29(0x1b8);for(let j=0x1;j<=0x1e;j++){if(i==0x1d&&j==0xf)board+=_0x3d1a29(0x19b)+i+'-'+j+_0x3d1a29(0x1a4);else{if(i==0x1e&&j==0xe||i==0x1e&&j==0xf||i==0x1e&&j==0x10)board+='<div\x20class=\x22col-'+i+'-'+j+_0x3d1a29(0x198);else board+=_0x3d1a29(0x19b)+i+'-'+j+_0x3d1a29(0x1a1);}}board+=_0x3d1a29(0x1b6);}document[_0x3d1a29(0x1b1)](_0x3d1a29(0x19d))[_0x3d1a29(0x1be)]=board;const btnKiri=document[_0x3d1a29(0x1b1)](_0x3d1a29(0x1c0)),btnKanan=document[_0x3d1a29(0x1b1)]('#kanan');document[_0x3d1a29(0x1a7)](_0x3d1a29(0x1a2),_0x5bd268=>{const _0x25ae57=_0x3d1a29;var _0xbfa0d5=_0x5bd268['key'];if(_0xbfa0d5=='f'||_0xbfa0d5=='F')tembak();else{if(_0xbfa0d5=='a'||_0xbfa0d5=='A')btnKiri[_0x25ae57(0x1a0)]();else{if(_0xbfa0d5=='d'||_0xbfa0d5=='D')btnKanan[_0x25ae57(0x1a0)]();else _0xbfa0d5==_0x25ae57(0x1a8)&&(document[_0x25ae57(0x1ac)][_0x25ae57(0x19c)]=_0x25ae57(0x1b9));}}},![]),document[_0x3d1a29(0x19f)](_0x3d1a29(0x19a))[_0x3d1a29(0x1b2)](_0x2b6845=>{const _0x3c32d6=_0x3d1a29;_0x2b6845[_0x3c32d6(0x1a7)](_0x3c32d6(0x1a0),function(){const _0x2e9862=_0x3c32d6;let _0xc4a6dc=this[_0x2e9862(0x1b5)]['arahIndex'],_0x3cf87c=Number(document[_0x2e9862(0x1b1)](_0x2e9862(0x1a3))[_0x2e9862(0x1aa)]['classList'][0x0][_0x2e9862(0x1bb)]('-')[0x1]),_0x33cb06=Number(document['querySelector'](_0x2e9862(0x1a3))[_0x2e9862(0x1aa)][_0x2e9862(0x1b4)][0x0][_0x2e9862(0x1bb)]('-')[0x2]);_0xc4a6dc=='+'?_0x33cb06=_0x33cb06+0x1>0x1d?0x1d:_0x33cb06+0x1:_0x33cb06=_0x33cb06-0x1==0x1?0x2:_0x33cb06-0x1;document[_0x2e9862(0x1b1)]('.player')['remove'](),document['querySelectorAll'](_0x2e9862(0x1af))[_0x2e9862(0x1b2)](_0x55fb9d=>_0x55fb9d[_0x2e9862(0x1b0)]());;document[_0x2e9862(0x1b1)]('.col-'+_0x3cf87c+'-'+_0x33cb06)[_0x2e9862(0x1be)]=_0x2e9862(0x199),document[_0x2e9862(0x1b1)](_0x2e9862(0x1b7)+(_0x3cf87c+0x1)+'-'+_0x33cb06)['innerHTML']=_0x2e9862(0x1bd),document[_0x2e9862(0x1b1)]('.col-'+(_0x3cf87c+0x1)+'-'+(_0x33cb06+0x1))[_0x2e9862(0x1be)]=_0x2e9862(0x1bd),document['querySelector'](_0x2e9862(0x1b7)+(_0x3cf87c+0x1)+'-'+(_0x33cb06-0x1))[_0x2e9862(0x1be)]=_0x2e9862(0x1bd);});});</script>
+</body>
+</html>

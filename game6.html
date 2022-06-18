@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game 6</title>
+    <link rel="shortcut icon" href="https://img.icons8.com/external-flaticons-flat-flat-icons/2x/external-game-live-streaming-flaticons-flat-flat-icons.png" type="image/x-icon">
+    <style>
+        * {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .enemy-blood, .player-blood {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            background: red;
+            margin: 3px 3px;
+        }
+
+        .enemy-blood-board, .player-blood-board {
+            display: flex;
+            margin-top: 10px;
+            height: max-content;
+            width: max-content;
+            border: 1px dashed black;
+        }
+
+        .board {
+            background: rgb(208, 255, 208);
+            margin-top: 10px;
+            height: max-content;
+            width: max-content;
+            border: 1px dashed black;
+        }
+
+        .row {
+            display: flex;
+        }
+        .col {
+            margin: 1px 1px;
+            height: 10px;
+            width: 10px;
+        }
+
+        .player, .player-body, .enemy, .enemy-body {
+            background: black;
+            border-radius: 20%;
+            height: 10px;
+            width: 10px;
+        }
+        .peluru {
+            background: rgb(0, 0, 0);
+            border-radius: 50%;
+            height: 5px;
+            width: 5px;
+        }
+
+        @keyframes kedip {
+            0% {
+                opacity: 100%;
+            }
+            10% {
+                opacity: 30%;
+            }
+            20% {
+                opacity: 100%;
+            }
+            30% {
+                opacity: 30%;
+            }
+            40% {
+                opacity: 100%;
+            }
+            50% {
+                opacity: 30%;
+            }
+            60% {
+                opacity: 100%;
+            }
+            70% {
+                opacity: 30%;
+            }
+            80% {
+                opacity: 100%;
+            }
+            90% {
+                opacity: 30%;
+            }
+            100% {
+                opacity: 100%;
+            }
+        }
+
+        .btn-controler {
+            background: rgb(221, 221, 221);
+            border: 1px solid black;
+            border-radius: 10%;
+            box-shadow: 2px 3px 4px rgb(134, 134, 134);
+            height: 50px;
+            width: 50px;
+            transition: 50ms;
+        }
+        .btn-controler:active {
+            transform: scale(1.09);
+        }
+
+    </style>
+</head>
+<body>
+    <a href="index.html"><button>back(Esc)</button></a>
+    <center>
+        <div class="board">
+
+        </div>
+
+        <div class="controler">
+            <div>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button class="btn btn-controler" id="atas" data-arah-index="vertikal,-"><b>W</b></button></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><button class="btn btn-controler" id="kiri" data-arah-index="horizontal,-"><b>A</b></button></td>
+                        <td><button class="btn btn-controler btn-tembak"><b>F</b></button></td>
+                        <td><button class="btn btn-controler" id="kanan" data-arah-index="horizontal,+"><b>D</b></button></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button class="btn btn-controler" id="bawah" data-arah-index="vertikal,+"><b>S</b></button></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </center>
+
+    <script>function _0x1ad6(){const _0x1f7f6c=['\x20col\x22><div\x20class=\x22player-body\x22></div></div>','kanan','split','\x22></div>','classList','.peluru-','</div>','1716075alJCOn','querySelector','querySelectorAll','href','10PMplRn','7lIPfno','kiri','<div\x20class=\x22row-','#kanan','<div\x20class=\x22peluru\x20peluru-','location','#kiri','<div\x20class=\x22player-body\x22></div>','\x20row\x22>','1671604bWHxym','#atas','<div\x20class=\x22player\x22></div>','1347702YqujkW','6457946CSZxYg','click','dataset','vertikal','75249bKFkAS','<div\x20class=\x22col-','.btn-controler','forEach','arahIndex','bawah','.btn-tembak','18294HwZqbf','remove','.player-body','keydown','.col-','parentNode','key','innerHTML','99BuWRse','\x20col\x22></div>','addEventListener','atas','Escape','261ehoXKX','173776jzPkZl','.player','\x20col\x22><div\x20class=\x22player\x22></div></div>'];_0x1ad6=function(){return _0x1f7f6c;};return _0x1ad6();}const _0x50dd1a=_0x6ea3;function _0x6ea3(_0x49ddde,_0x16d774){const _0x1ad659=_0x1ad6();return _0x6ea3=function(_0x6ea312,_0x34717b){_0x6ea312=_0x6ea312-0x115;let _0x510eb4=_0x1ad659[_0x6ea312];return _0x510eb4;},_0x6ea3(_0x49ddde,_0x16d774);}(function(_0xcc5828,_0x44bcf2){const _0x5e6c7b=_0x6ea3,_0x1543b8=_0xcc5828();while(!![]){try{const _0x5be528=parseInt(_0x5e6c7b(0x138))/0x1+parseInt(_0x5e6c7b(0x13f))/0x2*(parseInt(_0x5e6c7b(0x147))/0x3)+parseInt(_0x5e6c7b(0x130))/0x4+-parseInt(_0x5e6c7b(0x122))/0x5+parseInt(_0x5e6c7b(0x133))/0x6*(parseInt(_0x5e6c7b(0x127))/0x7)+parseInt(_0x5e6c7b(0x118))/0x8*(-parseInt(_0x5e6c7b(0x117))/0x9)+-parseInt(_0x5e6c7b(0x126))/0xa*(-parseInt(_0x5e6c7b(0x134))/0xb);if(_0x5be528===_0x44bcf2)break;else _0x1543b8['push'](_0x1543b8['shift']());}catch(_0x2cd370){_0x1543b8['push'](_0x1543b8['shift']());}}}(_0x1ad6,0x9aacf));const bulletSpeed=0x28;let arah='atas',board='';for(let i=0x1;i<=0x1e;i++){board+=_0x50dd1a(0x129)+i+_0x50dd1a(0x12f);for(let j=0x1;j<=0x1e;j++){if(i==0x1d&&j==0xf)board+=_0x50dd1a(0x139)+i+'-'+j+_0x50dd1a(0x11a);else{if(i==0x1e&&j==0xe||i==0x1e&&j==0xf||i==0x1e&&j==0x10)board+='<div\x20class=\x22col-'+i+'-'+j+_0x50dd1a(0x11b);else board+=_0x50dd1a(0x139)+i+'-'+j+_0x50dd1a(0x148);}}board+=_0x50dd1a(0x121);}document['querySelector']('.board')[_0x50dd1a(0x146)]=board;let indexPeluru=0x1;function tembak(){const _0x371540=_0x50dd1a;let _0x34fe82=indexPeluru,_0x5aaab6=Number(document['querySelector'](_0x371540(0x119))['parentNode'][_0x371540(0x11f)][0x0][_0x371540(0x11d)]('-')[0x1]),_0x518add=Number(document[_0x371540(0x123)](_0x371540(0x119))['parentNode'][_0x371540(0x11f)][0x0]['split']('-')[0x2]);if(arah==_0x371540(0x115)){let _0x48a945=setInterval(()=>{const _0x5b20c7=_0x371540;document[_0x5b20c7(0x123)]('.peluru-'+_0x34fe82)?document[_0x5b20c7(0x123)](_0x5b20c7(0x120)+_0x34fe82)['remove']():0x0;if(_0x5aaab6>0x1)_0x5aaab6--,document[_0x5b20c7(0x123)](_0x5b20c7(0x143)+_0x5aaab6+'-'+_0x518add)[_0x5b20c7(0x146)]='<div\x20class=\x22peluru\x20peluru-'+_0x34fe82+_0x5b20c7(0x11e);else clearInterval(_0x48a945);},bulletSpeed);indexPeluru++;}else{if(arah==_0x371540(0x13d)){let _0x2e565e=setInterval(()=>{const _0x31a52b=_0x371540;document[_0x31a52b(0x123)](_0x31a52b(0x120)+_0x34fe82)?document['querySelector'](_0x31a52b(0x120)+_0x34fe82)[_0x31a52b(0x140)]():0x0;if(_0x5aaab6<0x1e)_0x5aaab6++,document['querySelector'](_0x31a52b(0x143)+_0x5aaab6+'-'+_0x518add)['innerHTML']='<div\x20class=\x22peluru\x20peluru-'+_0x34fe82+_0x31a52b(0x11e);else clearInterval(_0x2e565e);},bulletSpeed);indexPeluru++;}else{if(arah==_0x371540(0x128)){let _0x2ddc2a=setInterval(()=>{const _0xa6d006=_0x371540;document['querySelector'](_0xa6d006(0x120)+_0x34fe82)?document[_0xa6d006(0x123)](_0xa6d006(0x120)+_0x34fe82)[_0xa6d006(0x140)]():0x0;if(_0x518add>0x1)_0x518add--,document[_0xa6d006(0x123)](_0xa6d006(0x143)+_0x5aaab6+'-'+_0x518add)[_0xa6d006(0x146)]=_0xa6d006(0x12b)+_0x34fe82+_0xa6d006(0x11e);else clearInterval(_0x2ddc2a);},bulletSpeed);indexPeluru++;}else{if(arah==_0x371540(0x11c)){let _0x33b44b=setInterval(()=>{const _0x294d74=_0x371540;document[_0x294d74(0x123)](_0x294d74(0x120)+_0x34fe82)?document[_0x294d74(0x123)](_0x294d74(0x120)+_0x34fe82)[_0x294d74(0x140)]():0x0;if(_0x518add<0x1e)_0x518add++,document[_0x294d74(0x123)](_0x294d74(0x143)+_0x5aaab6+'-'+_0x518add)[_0x294d74(0x146)]=_0x294d74(0x12b)+_0x34fe82+_0x294d74(0x11e);else clearInterval(_0x33b44b);},bulletSpeed);indexPeluru++;}}}}}document[_0x50dd1a(0x123)](_0x50dd1a(0x13e))[_0x50dd1a(0x149)](_0x50dd1a(0x135),function(){tembak();});const btnAtas=document[_0x50dd1a(0x123)](_0x50dd1a(0x131)),btnKiri=document[_0x50dd1a(0x123)](_0x50dd1a(0x12d)),btnKanan=document[_0x50dd1a(0x123)](_0x50dd1a(0x12a)),btnBawah=document[_0x50dd1a(0x123)]('#bawah');document[_0x50dd1a(0x149)](_0x50dd1a(0x142),_0x11ef99=>{const _0x492149=_0x50dd1a;var _0x4803f3=_0x11ef99[_0x492149(0x145)];if(_0x4803f3=='f'||_0x4803f3=='F')tembak();else{if(_0x4803f3=='w'||_0x4803f3=='W')btnAtas['click']();else{if(_0x4803f3=='a'||_0x4803f3=='A')btnKiri[_0x492149(0x135)]();else{if(_0x4803f3=='s'||_0x4803f3=='S')btnBawah[_0x492149(0x135)]();else{if(_0x4803f3=='d'||_0x4803f3=='D')btnKanan[_0x492149(0x135)]();else _0x4803f3==_0x492149(0x116)&&(document[_0x492149(0x12c)][_0x492149(0x125)]='index.html');}}}}},![]),document['querySelectorAll'](_0x50dd1a(0x13a))[_0x50dd1a(0x13b)](_0x3573f8=>{const _0x4ee38c=_0x50dd1a;_0x3573f8[_0x4ee38c(0x149)]('click',function(){const _0x1de1da=_0x4ee38c;arah=this['id'];let _0x39dbd5=this[_0x1de1da(0x136)][_0x1de1da(0x13c)]['split'](',')[0x0],_0x10b332=this[_0x1de1da(0x136)][_0x1de1da(0x13c)]['split'](',')[0x1],_0x45dc2f=Number(document[_0x1de1da(0x123)](_0x1de1da(0x119))[_0x1de1da(0x144)][_0x1de1da(0x11f)][0x0][_0x1de1da(0x11d)]('-')[0x1]),_0xd70a8e=Number(document['querySelector'](_0x1de1da(0x119))['parentNode'][_0x1de1da(0x11f)][0x0][_0x1de1da(0x11d)]('-')[0x2]);if(_0x39dbd5==_0x1de1da(0x137))_0x10b332=='+'?_0x45dc2f=_0x45dc2f+0x1>0x1d?0x1d:_0x45dc2f+0x1:_0x45dc2f=_0x45dc2f-0x1==0x1?0x2:_0x45dc2f-0x1;else _0x39dbd5=='horizontal'&&(_0x10b332=='+'?_0xd70a8e=_0xd70a8e+0x1>0x1d?0x1d:_0xd70a8e+0x1:_0xd70a8e=_0xd70a8e-0x1==0x1?0x2:_0xd70a8e-0x1);document[_0x1de1da(0x123)]('.player')[_0x1de1da(0x140)](),document['querySelector']('.col-'+_0x45dc2f+'-'+_0xd70a8e)[_0x1de1da(0x146)]=_0x1de1da(0x132),document[_0x1de1da(0x124)](_0x1de1da(0x141))['forEach'](_0x4bb0a3=>_0x4bb0a3[_0x1de1da(0x140)]());if(arah==_0x1de1da(0x115))document[_0x1de1da(0x123)](_0x1de1da(0x143)+(_0x45dc2f+0x1)+'-'+_0xd70a8e)[_0x1de1da(0x146)]=_0x1de1da(0x12e),document[_0x1de1da(0x123)](_0x1de1da(0x143)+(_0x45dc2f+0x1)+'-'+(_0xd70a8e+0x1))['innerHTML']=_0x1de1da(0x12e),document['querySelector'](_0x1de1da(0x143)+(_0x45dc2f+0x1)+'-'+(_0xd70a8e-0x1))[_0x1de1da(0x146)]='<div\x20class=\x22player-body\x22></div>';else{if(arah==_0x1de1da(0x13d))document['querySelector'](_0x1de1da(0x143)+(_0x45dc2f-0x1)+'-'+_0xd70a8e)['innerHTML']='<div\x20class=\x22player-body\x22></div>',document['querySelector'](_0x1de1da(0x143)+(_0x45dc2f-0x1)+'-'+(_0xd70a8e+0x1))[_0x1de1da(0x146)]=_0x1de1da(0x12e),document['querySelector']('.col-'+(_0x45dc2f-0x1)+'-'+(_0xd70a8e-0x1))[_0x1de1da(0x146)]=_0x1de1da(0x12e);else{if(arah==_0x1de1da(0x128))document['querySelector'](_0x1de1da(0x143)+_0x45dc2f+'-'+(_0xd70a8e+0x1))['innerHTML']=_0x1de1da(0x12e),document[_0x1de1da(0x123)]('.col-'+(_0x45dc2f-0x1)+'-'+(_0xd70a8e+0x1))[_0x1de1da(0x146)]=_0x1de1da(0x12e),document[_0x1de1da(0x123)]('.col-'+(_0x45dc2f+0x1)+'-'+(_0xd70a8e+0x1))[_0x1de1da(0x146)]=_0x1de1da(0x12e);else arah==_0x1de1da(0x11c)&&(document[_0x1de1da(0x123)]('.col-'+_0x45dc2f+'-'+(_0xd70a8e-0x1))['innerHTML']=_0x1de1da(0x12e),document[_0x1de1da(0x123)]('.col-'+(_0x45dc2f-0x1)+'-'+(_0xd70a8e-0x1))['innerHTML']=_0x1de1da(0x12e),document[_0x1de1da(0x123)]('.col-'+(_0x45dc2f+0x1)+'-'+(_0xd70a8e-0x1))[_0x1de1da(0x146)]=_0x1de1da(0x12e));}}});});</script>
+</body>
+</html>
